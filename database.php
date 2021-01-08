@@ -10,7 +10,7 @@
       $servername = "localhost";
       $username = "root";
       $password = "";
-      $database = "personal";
+      $database = "fvtech";
 
       // Create a connection
       $conn = mysqli_connect($servername, $username, $password, $database);
@@ -21,16 +21,12 @@
       else{ 
         // Submit these to a database
         // Sql query to be executed 
-        $sql = "INSERT INTO `student_info` (`Name`, `email`, `subject`, `message`) VALUES ('$name', '$email', '$subject', '$message');";
+        $sql = "INSERT INTO `user` (`Name`, `email`, `subject`, `message`) VALUES ('$name', '$email', '$subject', '$message');";
         $result = mysqli_query($conn, $sql);
  
         if($result){
-          echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>Success!</strong> Your entry has been submitted successfully!
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>';
+          echo '<script>alert("submitted successfully");</script>;
+         ';
         }
         else{
             // echo "The record was not inserted successfully because of this error ---> ". mysqli_error($conn);
