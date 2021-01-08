@@ -21,7 +21,7 @@
       else{ 
         // Submit these to a database
         // Sql query to be executed 
-        $sql = "INSERT INTO `user` (`Name`, `email`, `subject`, `message`) VALUES ('$name', '$email', '$subject', '$message');";
+        $sql = "INSERT INTO `user` (`name`, `email`, `subject`, `message`) VALUES ('$name', '$email', '$subject', '$message');";
         $result = mysqli_query($conn, $sql);
  
         if($result){
